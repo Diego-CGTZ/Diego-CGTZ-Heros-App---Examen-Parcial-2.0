@@ -1,0 +1,47 @@
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos y carpetas de compilación
+/build/
+/out/
+
+# Configuración de IntelliJ IDEA y otros IDEs
+/.idea/
+/*.iml
+*.iws
+.idea/workspace.xml
+.idea/libraries/
+
+# Archivos de configuración de entorno
+*.log
+*.temp
+*.tmp
+
+# Archivos de configuración del sistema operativo
+*.swp
+*.swo
+
+# Dependencias locales de Gradle
+/.gradle/
+/gradle/
+/gradlew
+/gradlew.bat
+
+# Archivos de caché y logs
+*.class
+*.jar
+*.war
+*.ear
+*.db
+
+# Archivo Kotlin específico
+/target/
+
+# Archivos y carpetas del entorno de ejecución
+/.mvn/
+*.pid
+
+# Archivos de test
+test-output/
+*.orig

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Heros App - Examen Parcial</string>
+    <string name="login_text">Inicio de sesion</string>
+    <string name="password">Contraseña</string>
+    <string name="email">Email</string>
+    <string name="category_name">Nombre de la categoria</string>
+    <string name="hero_name">nombre del super heroe</string>
+    <string name="universe_title">Universo de super heroes</string>
+</resources>
