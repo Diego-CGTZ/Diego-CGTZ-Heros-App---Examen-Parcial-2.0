@@ -11,6 +11,7 @@
     import androidx.recyclerview.widget.LinearLayoutManager
     import androidx.recyclerview.widget.RecyclerView
     import com.example.herosapp_examenparcial.R
+    import com.example.herosapp_examenparcial.adapters.SupAdapter
     import com.example.herosapp_examenparcial.adapters.UniverseAdapter
     import com.example.herosapp_examenparcial.models.Universe
     import com.example.herosapp_examenparcial.models.Publisher
@@ -18,17 +19,21 @@
 
     class UniverseActivity : AppCompatActivity() {
         lateinit var universeTitle: TextView
-        lateinit var universeRecyclerView: RecyclerView
+        lateinit var supRecyclerView: RecyclerView
         lateinit var universeImage: ImageView
         lateinit var universe_background: ImageView
+        lateinit var supLogo: ImageView
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             enableEdgeToEdge()
             setContentView(R.layout.activity_universe)
+            val sharedPreferences = getSharedPreferences("myPrefs", MODE_PRIVATE)
             universeTitle = findViewById(R.id.universe_name)
-            universeRecyclerView = findViewById(R.id.universe_recicleview)
             universeImage = findViewById(R.id.universe_logo)
             universe_background = findViewById(R.id.universe_background)
+            supRecyclerView = findViewById(R.id.universe_recicleview)
+            supRecyclerView.adapter = SupAdapter(Universe.sups)
+            supRecyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
 
 
             val publisherId = intent.getIntExtra("publisherId",0)
@@ -41,10 +46,11 @@
             Picasso.get().load(publisher?.image).into(universeImage)
             Picasso.get().load(publisher?.background).into(universe_background)
 
-            universeRecyclerView.layoutManager = LinearLayoutManager(this,
-                LinearLayoutManager.HORIZONTAL,false)
 
-            val sups = Universe.sups.filter { sups ->
+
+            supRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false)
+
+            val universe = Universe.sups.filter { sups ->
                 sups.universeid == publisherId
             }
 

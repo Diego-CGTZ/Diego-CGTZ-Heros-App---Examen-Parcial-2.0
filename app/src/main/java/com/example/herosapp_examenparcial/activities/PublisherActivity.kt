@@ -1,6 +1,5 @@
 package com.example.herosapp_examenparcial.activities
 
-
 import PublisherAdapter
 import android.content.Intent
 import android.os.Bundle
@@ -31,7 +30,7 @@ class PublisherActivity : AppCompatActivity() {
         gif = findViewById(R.id.gif_bg)
         publisherRecyclerView = findViewById(R.id.publisher_recicleview)
         publisherRecyclerView.adapter = PublisherAdapter(Publisher.categories){ publisher ->
-            Log.i("restaurant desde home", publisher.name)
+            Log.i("publisher desde home", publisher.name)
             val intent = Intent(this@PublisherActivity, UniverseActivity::class.java)
             intent.putExtra("publisherId", publisher.id)
             startActivity(intent)
