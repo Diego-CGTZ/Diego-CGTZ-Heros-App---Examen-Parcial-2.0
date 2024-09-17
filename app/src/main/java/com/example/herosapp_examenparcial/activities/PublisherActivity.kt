@@ -14,11 +14,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.herosapp_examenparcial.MainActivity
 import com.example.herosapp_examenparcial.R
 import com.example.herosapp_examenparcial.models.Publisher
+import com.bumptech.glide.Glide
 
 class PublisherActivity : AppCompatActivity() {
     lateinit var usernameTV: TextView
     lateinit var logoutBtn: ImageView
     lateinit var publisherRecyclerView: RecyclerView
+    lateinit var gif: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,6 +28,7 @@ class PublisherActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("myPrefs", MODE_PRIVATE)
         usernameTV = findViewById(R.id.usernameTV)
         logoutBtn = findViewById(R.id.logoutBtn)
+        gif = findViewById(R.id.gif_bg)
         publisherRecyclerView = findViewById(R.id.publisher_recicleview)
         publisherRecyclerView.adapter = PublisherAdapter(Publisher.categories){ publisher ->
             Log.i("restaurant desde home", publisher.name)
@@ -37,6 +40,11 @@ class PublisherActivity : AppCompatActivity() {
         publisherRecyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
 //        val user = User.users[1]
 //        usernameTV.text = user.computedName
+        Glide.with(this)
+            .asGif()
+            .load(R.drawable.stannlee)
+            .into(gif)
+
         logoutBtn.setOnClickListener {
             Log.i("LOGOUT", "Cerrando sesion")
             val editor = sharedPreferences.edit()

@@ -11,11 +11,15 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="25dp">
+        android:layout_margin="25dp"
+        android:layout_gravity="center">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="550dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/gif_bg"
+            android:layout_width="400dp"
+            android:layout_height="600dp"
             android:src="@drawable/stannlee"
             android:alpha=".4"
             app:layout_constraintTop_toBottomOf="@+id/categoryTV"
@@ -71,7 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Selecciona tu universo"
-            android:textSize="24sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -82,6 +86,7 @@
             android:textAlignment="center"/>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:layout_margin="50dp"
             android:foregroundGravity="center"
             android:id="@+id/publisher_recicleview"
             android:layout_width="match_parent"

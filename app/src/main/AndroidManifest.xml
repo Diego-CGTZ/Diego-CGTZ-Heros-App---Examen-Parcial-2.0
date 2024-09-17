@@ -15,6 +15,9 @@
         android:theme="@style/Theme.HerosAppExamenParcial"
         tools:targetApi="31">
         <activity
+            android:name=".activities.SupsActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.UniverseActivity"
             android:exported="false" />
         <activity

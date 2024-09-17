@@ -13,8 +13,8 @@
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/publisher_image"
-            android:layout_width="350dp"
-            android:layout_height="350dp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:src="@drawable/dc"
             android:layout_gravity="center"
             />
